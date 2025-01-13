@@ -1,0 +1,33 @@
+<div class="container">
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone Number</th>
+      <th>Job Title</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let em of employeeService.employeeList">
+      <td>{{em.id}}</td>
+      <td>{{em.name}}</td>
+      <td>{{em.email}}</td>
+      <td>{{em.phoneNumber}}</td>
+      <td>{{em.jobTitle}}</td>
+      <td>
+        <button class="btn btn-info" (click)="employeeModal.openEdit(em)">
+          Edit
+        </button>
+        <button class="btn btn-danger" (click)="employeeService.deleteUser(em.id)">
+          Delete
+        </button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button class="btn btn-success" (click)="employeeModal.open()">Add Employee</button>
+</div>
+
+<app-employeemodal></app-employeemodal>

@@ -1,0 +1,23 @@
+<ng-template #modalTemplate let-modal>
+    <div class="modal-header">
+        <h4 class="modal-title" id="modal-basic-title">{{title}}</h4>
+    </div>
+    <div class="modal-body">
+        <form>
+            <div class="form-container">
+                <label for="name">Name</label>
+                <input name="name" class="ínput" [(ngModel)]="name" />
+                <label for="email">Email</label>
+                <input name="email" type="email" [(ngModel)]="email" />
+                <label for="jobTitle">Phone Number</label>
+                <input name="jobTitle" [(ngModel)]="phoneNumber" />
+                <label for="phoneNumber">Job Title</label>
+                <input name="phoneNumber" [(ngModel)]="jobTitle" />
+            </div>
+        </form>
+    </div>
+    <div class="modal-footer">
+        <button *ngIf="!isEdit" type="button" class="btn btn-outline-secondary" (click)="submitCreate()">Create</button>
+        <button *ngIf="isEdit" type="button" class="btn btn-outline-secondary" (click)="submitEdit()">Edit</button>
+    </div>
+</ng-template>
